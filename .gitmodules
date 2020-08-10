@@ -1,0 +1,6 @@
+[submodule "resources/code/workshop-angular/aws-chalice-ecommerce-workshop"]
+	path = resources/code/workshop-angular/aws-chalice-ecommerce-workshop
+	url = https://github.com/madhavmehta1/aws-chalice-ecommerce-workshop.git
+[submodule "resources/code/chalice-ecommerce-workshop-site"]
+	path = resources/code/chalice-ecommerce-workshop-site
+	url = https://github.com/madhavmehta1/chalice-ecommerce-workshop-site.git
