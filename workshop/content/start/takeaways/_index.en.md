@@ -19,3 +19,5 @@ Looking back at the output message after deploying your Chalice project, you can
 3. Created the corresponding Rest API in API Gateway
     - Chalice automatically configures your API's Integration Request to a with a Lambda proxy to integrate with your Lambda Function
 {{< img "api-console.png" "API Console">}}
+4. Created a basic CI/CD pipeline that updates and deploys our Chalice app through CloudFormation.
+{{< img "ci-cd-stack.png" "App Stack">}}

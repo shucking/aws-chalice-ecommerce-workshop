@@ -120,3 +120,21 @@ Once your Chalice project is deployed, from the root of your of the project navi
   "backend": "api"
 }
 ```
+
+## Create CI/CD Pipeline
+
+Setting up a CI/CD pipeline is very easy. From the root of your Chalice project, run the following commands:
+```bash
+$ chalice generate-pipeline pipeline.json
+$ aws cloudformation deploy --stack-name mystack
+      --template-file pipeline.json --capabilities CAPABILITY_IAM
+```
+These commands will generate the following:
+- CodeCommit repository where project code will be pushed
+- CodePipeline pipeline that coordinates the build and deployment process
+- CodeBuild project that builds and bundles code to be pushed to Lambda
+- S3 Buckets storing CodeBuild artifacts and application bundle.
+
+Every time a commit is made to the master branch of the Code Commit repository, the pipeline will trigger a transition to the CodeBuild project. Ater the CodeBuild project succeeds, a CloudFormation stack will update your Lambda function and Rest API as well as any relevant permissions.
+
+{{< img "ci-cd-pipeline.png" "Pipeline">}}
