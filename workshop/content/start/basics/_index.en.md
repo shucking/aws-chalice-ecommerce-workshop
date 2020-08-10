@@ -137,4 +137,6 @@ These commands will generate the following:
 
 Every time a commit is made to the master branch of the Code Commit repository, the pipeline will trigger a transition to the CodeBuild project. Ater the CodeBuild project succeeds, a CloudFormation stack will update your Lambda function and Rest API as well as any relevant permissions.
 
+***Be sure to keep note of the Outputs from your deployment as you will need them on hand for your application.***
+
 {{< img "ci-cd-pipeline.png" "Pipeline">}}
