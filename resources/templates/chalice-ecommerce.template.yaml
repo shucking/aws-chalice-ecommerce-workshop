@@ -1,11 +1,6 @@
 AWSTemplateFormatVersion: "2010-09-09"
 Description: "Cloudformation template for Chalice Ecommerce Application"
 Resources:
-    S3Bucket:
-        Type: "AWS::S3::Bucket"
-        Properties:
-            BucketName: "chalice-demo-site"
-
     DynamoDBTable:
         Type: "AWS::DynamoDB::Table"
         Properties:
@@ -194,7 +189,5 @@ Outputs:
     Value: !Ref CognitoUserPoolClient
   CognitoUserPoolArn:
     Value: !GetAtt CognitoUserPool.Arn
-  S3BucketName:
-    Value: !Ref S3Bucket
   DynamoDBTableName:
     Value: !Ref DynamoDBTable
