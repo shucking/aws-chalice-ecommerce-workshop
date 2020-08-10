@@ -1,0 +1,3 @@
+[submodule "resources/code/chalice-ecommerce-workshop-site"]
+	path = resources/code/chalice-ecommerce-workshop-site
+	url = https://github.com/madhavmehta1/chalice-ecommerce-workshop-site.git
