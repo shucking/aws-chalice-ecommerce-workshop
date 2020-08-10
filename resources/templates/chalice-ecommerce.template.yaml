@@ -1,0 +1,200 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: "Cloudformation template for Chalice Ecommerce Application"
+Resources:
+    S3Bucket:
+        Type: "AWS::S3::Bucket"
+        Properties:
+            BucketName: "chalice-demo-site"
+
+    DynamoDBTable:
+        Type: "AWS::DynamoDB::Table"
+        Properties:
+            AttributeDefinitions: 
+              - 
+                AttributeName: "PK"
+                AttributeType: "S"
+              - 
+                AttributeName: "SK"
+                AttributeType: "S"
+            TableName: "chalice-demo-table"
+            KeySchema: 
+              - 
+                AttributeName: "PK"
+                KeyType: "HASH"
+              - 
+                AttributeName: "SK"
+                KeyType: "RANGE"
+            ProvisionedThroughput: 
+                ReadCapacityUnits: 5
+                WriteCapacityUnits: 5
+            GlobalSecondaryIndexes: 
+              - 
+                IndexName: "GSI-1"
+                KeySchema: 
+                  - 
+                    AttributeName: "SK"
+                    KeyType: "HASH"
+                  - 
+                    AttributeName: "PK"
+                    KeyType: "RANGE"
+                Projection: 
+                    ProjectionType: "INCLUDE"
+                    NonKeyAttributes: 
+                      - "quantity"
+                      - "order_status"
+                      - "total_cart_price"
+                      - "order_date"
+                      - "product_name"
+                      - "img_url"
+                      - "address"
+                      - "price"
+                      - "total_item_price"
+                ProvisionedThroughput: 
+                    ReadCapacityUnits: 5
+                    WriteCapacityUnits: 5
+
+    CognitoUserPool:
+        Type: "AWS::Cognito::UserPool"
+        Properties:
+            UserPoolName: "chalice-demo-user-pool"
+            Policies: 
+                PasswordPolicy: 
+                    MinimumLength: 8
+                    RequireUppercase: true
+                    RequireLowercase: true
+                    RequireNumbers: true
+                    RequireSymbols: true
+                    TemporaryPasswordValidityDays: 7
+            Schema: 
+              - 
+                Name: "sub"
+                AttributeDataType: "String"
+                DeveloperOnlyAttribute: false
+                Mutable: false
+                Required: true
+                StringAttributeConstraints: 
+                    MinLength: "1"
+                    MaxLength: "2048"
+              - 
+                Name: "email"
+                AttributeDataType: "String"
+                DeveloperOnlyAttribute: false
+                Mutable: true
+                Required: true
+                StringAttributeConstraints: 
+                    MinLength: "0"
+                    MaxLength: "2048"
+              - 
+                Name: "address"
+                AttributeDataType: "String"
+                DeveloperOnlyAttribute: false
+                Mutable: true
+                Required: true
+                StringAttributeConstraints: 
+                    MinLength: "0"
+                    MaxLength: "2048"
+              - 
+                Name: "email_verified"
+                AttributeDataType: "Boolean"
+                DeveloperOnlyAttribute: false
+                Mutable: true
+                Required: false
+            AutoVerifiedAttributes: 
+              - "email"
+
+    CognitoUserPoolClient:
+        Type: "AWS::Cognito::UserPoolClient"
+        DependsOn: CognitoUserPool
+        Properties:
+            UserPoolId: !Ref CognitoUserPool
+            ClientName: "chalice-user-client"
+            RefreshTokenValidity: 30
+            ReadAttributes: 
+              - "address"
+              - "email"
+              - "email_verified"
+            WriteAttributes: 
+              - "address"
+              - "email"
+            ExplicitAuthFlows: 
+              - "ALLOW_CUSTOM_AUTH"
+              - "ALLOW_REFRESH_TOKEN_AUTH"
+              - "ALLOW_USER_SRP_AUTH"
+            PreventUserExistenceErrors: "ENABLED"
+
+    CognitoIdentityPool:
+        Type: "AWS::Cognito::IdentityPool"
+        DependsOn: [ CognitoUserPool, CognitoUserPoolClient ]
+        Properties:
+            IdentityPoolName: "chalice_app_identity"
+            AllowUnauthenticatedIdentities: false
+            CognitoIdentityProviders: 
+              - 
+                ProviderName: !GetAtt CognitoUserPool.ProviderName
+                ClientId: !Ref CognitoUserPoolClient
+                ServerSideTokenCheck: false
+
+    IAMRole:
+        Type: "AWS::IAM::Role"
+        DependsOn: CognitoIdentityPool
+        Properties:
+            Path: "/"
+            RoleName: "chalice-user-auth_role"
+            AssumeRolePolicyDocument:
+              Version: "2012-10-17"
+              Statement:
+                -
+                  Effect: Allow
+                  Action: "sts:AssumeRoleWithWebIdentity"
+                  Principal:
+                    Federated: "cognito-identity.amazonaws.com"
+                  Condition:
+                    StringEquals:
+                      "cognito-identity.amazonaws.com:aud": !Ref CognitoIdentityPool
+                    "ForAnyValue:StringLike":
+                      "cognito-identity.amazonaws.com:amr": "authenticated"
+            Policies:
+              -
+                PolicyName: chalice-user-auth_policy
+                PolicyDocument:
+                  Version: "2012-10-17"
+                  Statement:
+                    -
+                      Effect: Allow
+                      Action: [ "mobileanalytics:PutEvents", "cognito-sync:*", "cognito-identity:*" ]
+                      Resource: "*"
+            MaxSessionDuration: 3600
+
+    CognitoUserPoolGroup:
+        Type: "AWS::Cognito::UserPoolGroup"
+        DependsOn: [ CognitoUserPool, IAMRole ]
+        Properties:
+            GroupName: "chalice-demo-users"
+            UserPoolId: !Ref CognitoUserPool
+            RoleArn: !GetAtt IAMRole.Arn
+
+    CognitoIdentityPoolRoleAttachment:
+        Type: "AWS::Cognito::IdentityPoolRoleAttachment"
+        DependsOn: [ IAMRole, CognitoIdentityPool, CognitoUserPoolClient, CognitoUserPool ]
+        Properties:
+            IdentityPoolId: !Ref CognitoIdentityPool
+            RoleMappings:
+              "chalice-demo-user-pool":
+                IdentityProvider: !Join [ "", ["cognito-idp.", !Sub "${AWS::Region}", ".amazonaws.com/", !Ref CognitoUserPool, ":", !Ref CognitoUserPoolClient] ]
+                Type: Token
+                AmbiguousRoleResolution: Deny
+            Roles: 
+                authenticated: !GetAtt IAMRole.Arn
+Outputs:
+  CognitoIdentityPoolId:
+    Value: !Ref CognitoIdentityPool
+  CognitoUserPoolId:
+    Value: !Ref CognitoUserPool
+  CogntioUserPoolClientId:
+    Value: !Ref CognitoUserPoolClient
+  CognitoUserPoolArn:
+    Value: !GetAtt CognitoUserPool.Arn
+  S3BucketName:
+    Value: !Ref S3Bucket
+  DynamoDBTableName:
+    Value: !Ref DynamoDBTable
