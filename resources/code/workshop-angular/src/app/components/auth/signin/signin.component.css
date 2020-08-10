@@ -1,0 +1,8 @@
+.wrapper {
+    text-align: center;
+}
+
+.btn btn-link {
+    position: absolute;
+    top: 50%;
+}
