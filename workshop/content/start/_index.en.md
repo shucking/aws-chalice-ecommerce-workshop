@@ -21,12 +21,11 @@ ___
     - API Gateway
     - S3
     - DynamoDB
-    - Cloudfront
     - Cognito User Pool and Identity Pool
     - CodeCommit
     - CodeBuild
-    - CodeDeploy
     - CodePipeline
+    - CloudFormation
 
 * [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html) - The CLI will be used to deploy this workshop's CloudFormation stack.
 

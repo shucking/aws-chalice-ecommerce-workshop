@@ -137,6 +137,6 @@ These commands will generate the following:
 
 Every time a commit is made to the master branch of the Code Commit repository, the pipeline will trigger a transition to the CodeBuild project. Ater the CodeBuild project succeeds, a CloudFormation stack will update your Lambda function and Rest API as well as any relevant permissions.
 
-***Be sure to keep note of the Outputs from your deployment as you will need them on hand for your application.***
-
 {{< img "ci-cd-pipeline.png" "Pipeline">}}
+
+***Note: Pushing code to the master branch and waiting for the pipeline to update your CloudFormation stack can take some time. During the development process, you can use the*** **`chalice deploy`** ***command to deploy your Chalice project to quickly test your Lambda function and Rest API. However, this command will provision its own Lambda function and API gateway endpoint. You must configure your front end to make API calls accordingly.***

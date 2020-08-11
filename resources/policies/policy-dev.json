@@ -1,0 +1,77 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "logs:CreateLogGroup",
+                "logs:CreateLogStream",
+                "logs:PutLogEvents"
+            ],
+            "Resource": "arn:aws:logs:*:*:*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "dynamodb:UpdateItem"
+            ],
+            "Resource": [
+                "[INSERT DYNAMODB TABLE ARN]"
+            ],
+            "Condition": {
+                "ForAllValues:StringEquals": {
+                    "dynamodb:Attributes": [
+                        "PK",
+                        "SK",
+                        "shopping_cart"
+                    ]
+                },
+                "StringEquals": {
+                    "dynamodb:ReturnValues": "UPDATED_NEW"
+                }
+            }
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "dynamodb:GetItem",
+                "dynamodb:PutItem",
+                "dynamodb:Scan",
+                "dynamodb:BatchWriteItem"
+            ],
+            "Resource": [
+                "[INSERT DYNAMODB TABLE ARN]"
+            ]
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "dynamodb:Query"
+            ],
+            "Resource": [
+                "[INSERT DYNAMODB TABLE ARN]",
+                "[INSERT DYNAMODB TABLE ARN]/index/GSI-1"
+            ],
+            "Condition": {
+                "ForAllValues:StringEquals": {
+                    "dynamodb:Attributes": [
+                        "PK",
+                        "SK",
+                        "order_status",
+                        "order_date",
+                        "address",
+                        "product_name",
+                        "quantity",
+                        "total_cart_price",
+                        "total_item_price",
+                        "price",
+                        "img_url"
+                    ]
+                },
+                "StringEquals": {
+                    "dynamodb:Select": "SPECIFIC_ATTRIBUTES"
+                }
+            }
+        }
+    ]
+}

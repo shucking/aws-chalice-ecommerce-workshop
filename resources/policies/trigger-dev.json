@@ -1,0 +1,16 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "dynamodb:PutItem",
+                "cognito-idp:AdminAddUserToGroup"
+            ],
+            "Resource": [
+                "[INSERT DYNAMODB TABLE ARN]",
+                "[INSERT COGNITO USER POOL ARN]"
+            ]
+        }
+    ]
+}
