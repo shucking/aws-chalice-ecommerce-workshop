@@ -21,7 +21,7 @@ BAG_URL = 'https://upload.wikimedia.org/wikipedia/commons/1/1d/Bagel-Plain-Alt.j
 STR_URL = 'https://upload.wikimedia.org/wikipedia/commons/e/e1/Strawberries.jpg'
 BBAG_URL = 'https://static.pexels.com/photos/416607/pexels-photo-416607.jpeg'
 
-table = boto3.resource('dynamodb').Table('ecommerce-app-table')
+table = boto3.resource('dynamodb').Table('[INSERT DYNAMODB TABLE NAME]')
 
 
 product_list = [
