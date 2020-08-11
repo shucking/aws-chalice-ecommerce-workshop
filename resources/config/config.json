@@ -7,7 +7,7 @@
         "environment_variables": {
           "APP_TABLE_NAME": "chalice-demo-table",
           "ARN_USER_POOL": "[INSERT COGNITO USER POOL ARN]",
-          "S3_BUCKET": "[INSERT S3 BUCKET NAME HERE]"
+          "S3_BUCKET": "[INSERT S3 BUCKET STATIC URL]"
         },
         "autogen_policy": false,
         "iam_policy_file": "policies/policy-dev.json",
@@ -19,5 +19,5 @@
         }
       }
     }
-  }
+}
   

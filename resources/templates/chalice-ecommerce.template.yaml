@@ -191,3 +191,5 @@ Outputs:
     Value: !GetAtt CognitoUserPool.Arn
   DynamoDBTableName:
     Value: !Ref DynamoDBTable
+  DynamoDBTableARN:
+    Value: !GetAtt DynamoDBTable.Arn

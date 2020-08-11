@@ -11,7 +11,7 @@ from chalicelib.util import perform_standard_operation, perform_batch_put, parse
 
 api_endpoints = Blueprint(__name__)
 
-authorizer = CognitoUserPoolAuthorizer('ecommerce-app-user-pool', header='Authorization',
+authorizer = CognitoUserPoolAuthorizer('chalice-demo-user-pool', header='Authorization',
                                        provider_arns=[os.environ['ARN_USER_POOL']])
 cors_config = CORSConfig(allow_origin=os.environ['S3_BUCKET'], allow_credentials=True,
                          allow_headers=['Content-Type', 'X-Amz-Date', 'Authorization', 'X-Api-Key', 'x-requested-with',
