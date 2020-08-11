@@ -5,17 +5,16 @@ pre = "<b>1.1 </b>"
 +++
 The following steps are here to help you install and initialize your Chalice Project. 
 
-## Install Chalice
+### Install Chalice
 
 If you haven't already, please install [Python 3.7](https://docs.python.org/3/using/index.html). After installing Python, run your terminal/command interface. 
 
 ```
 $ python3 pip install chalice
 ```
-
 ___
 
-## Create Chalice Project
+### Create Chalice Project
 
 1. Navigate to the directory in which you would like to start your Chalice Project.
 2. Run the following command to create your workshop:
@@ -29,7 +28,7 @@ ___
     ```
 ___
 
-## Configure AWS Credentials
+### Configure AWS Credentials
 In order to sync our Chalice Project with our AWS account, your AWS credentials must be configured on your machine. Keep your account's access and secret keys on hand:
 ```bash
 $ mkdir ~/.aws

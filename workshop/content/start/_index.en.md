@@ -31,3 +31,5 @@ ___
 
 * [Amplify Library](https://docs.amplify.aws/lib/q/platform/js) - After installing Node.js, run ```npm install aws-amplify``` in your terminal/command interface
     - _Note: Do NOT install the Amplify CLI, this project only utilizes the Amplify Library_.
+
+* [boto3](https://boto3.amazonaws.com/v1/documentation/api/latest/guide/quickstart.html#installation) - After installing Python 3.7, run `pip install boto3`. This is the AWS library for Python.

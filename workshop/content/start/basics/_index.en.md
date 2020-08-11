@@ -6,13 +6,12 @@ pre = "<b>1.2 </b>"
 
 ## Understanding the Basics
 
-If you have used Flask framework before, you have probably used decorators such as ```route()``` or ```endpoint()``` to link a function to your API calls. Chalice has similar decorators and many more that can give your application functions higher order functionality.
+If you have used Flask framework before, you have probably used decorators such as ```route()``` or ```endpoint()``` to link a function to your API calls. Chalice has similar decorators and many more that can give your application functions higher order functionality. Some main decorators to keep in mind for this workshop are `route()` and `lambda_function()`.
 
 If you would like to learn more about decorators, here are some helpful resources:
-<br>
-  - [Function decorators in Python.](https://docs.python.org/3.7/whatsnew/2.4.html#pep-318-decorators-for-functions-and-methods)
-<br>
-  - [Decorators in Flask.](https://flask.palletsprojects.com/en/1.1.x/api/#)
+  - [Decorators in Chalice](https://aws.github.io/chalice/api.html)
+  - [Decorators in Flask](https://flask.palletsprojects.com/en/1.1.x/api/#)
+  - [Function decorators in Python](https://docs.python.org/3.7/whatsnew/2.4.html#pep-318-decorators-for-functions-and-methods)
 
 Take a look at ```app.py``` in your project directory:
 ```python
