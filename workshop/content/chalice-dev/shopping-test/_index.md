@@ -21,4 +21,4 @@ Follow these steps to test the functionality:
 6. Click on the 'Clear Shopping Cart` button. The page will refresh and now your shopping cart will be empty. This confirms that the application was able to clear your entire cart.
 {{< img "shoppingempty.png" "Empty Shopping Cart">}}
 
-If you were able to complete all of these steps with the expected outcomes, you can confirm that all shopping cart functionality is working correctly. If not, please review the [**Shopping Cart Utility**](/chalice-dev/shopping-util.html) and the [**Shopping Cart Endpoint**](/chalice-dev/shopping-end.html) sections to make sure you have not missed any steps.
+If you were able to complete all of these steps with the expected outcomes, you can confirm that all shopping cart functionality is working correctly. If not, please review the [**Shopping Cart Utility**](/chalice-dev/shopping-util.html) and the [**Shopping Cart Endpoint**](/chalice-dev/shopping-end.html) modules to make sure you have not missed any steps.

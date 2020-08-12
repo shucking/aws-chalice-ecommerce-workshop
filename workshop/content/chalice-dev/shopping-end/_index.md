@@ -81,6 +81,8 @@ The **provider_arns** parameter uses an environment variable called `ARN_USER_PO
 
 With this authorizer configuration, anyone who tries to request the `/shopping_cart` route will have to be logged in and confirmed as Cognito User Pool user. This information will be sent through an HTTP header called `Authorization`. Users who have logged in and try to use their shopping cart will have valid `Authorization` tokens. Users who are not logged in will not be able to access a shopping cart because they will not have a valid token when they try to access a shopping cart.
 
+This authorizer will be used in the remaining endpoints, so it is important to understand what purpose it serves before moving on.
+
 
 
 
