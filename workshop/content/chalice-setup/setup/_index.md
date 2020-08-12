@@ -43,6 +43,8 @@ $ cd models
 $ touch order.py order_items.py
 ```
 
+**Please copy code for [`order.py`](https://github.com/madhavmehta1/aws-chalice-ecommerce-workshop/blob/master/resources/code/chalicelib/models/order.py) and [`order_items.py`](https://github.com/madhavmehta1/aws-chalice-ecommerce-workshop/blob/master/resources/code/chalicelib/models/order_item.py) before moving on.**
+
 ### Policies
 Navigate back to the root directory and go to the `.chalice` subdirectory. In this subdirectory, create folder called `policies`.
 Navigate to this newly created folder and create the following files: `policy-dev.json` and `trigger-dev.json`.

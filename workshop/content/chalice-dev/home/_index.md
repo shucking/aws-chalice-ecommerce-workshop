@@ -1,5 +1,5 @@
 +++
-title = "Develop the Home Endpoint"
+title = "Develop Home Endpoint"
 menuTitle = "Home Endpoint"
 weight = 10
 pre = "<b>4.1 </b>"
@@ -12,6 +12,7 @@ At the top of your `util.py` file, import boto3
 ```python
 import boto3
 import botocore
+import os
 
 table = boto3.resource('dynamodb').Table(os.environ['APP_TABLE_NAME'])
 ```
@@ -88,7 +89,14 @@ def get_products():
 ___
 
 ## api_endpoints.py
-Now that you have created the utility functions required to get the products from the database, you want to add a route and view function to your `api_endpoints.py` file.
+Now that you have created the utility functions required to get the products from the database, you want to add a route and view function to your `api_endpoints.py` file. 
+
+Don't forget to import the utility functions you just developed at the top of this file
+```python
+from chalicelib.util import get_products
+```
+
+Here is the route and view function:
 ```python
 @api_endpoints.route('/home', methods=['GET'], cors=cors_config)
 def home_endpoint():
