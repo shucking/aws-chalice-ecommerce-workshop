@@ -7,7 +7,7 @@ pre = "<b>2. </b>"
 
 [If you have not already set up your AWS CLI, please do so.](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-install.html).
 
-Please download or copy the following CloudFormation template: [`chalice-ecommerce-tample.yaml`](https://github.com/madhavmehta1/aws-chalice-ecommerce-workshop/blob/master/resources/templates/chalice-ecommerce.template.yaml).
+Please download or copy the following CloudFormation template: [`chalice-ecommerce-template.yaml`](https://github.com/madhavmehta1/aws-chalice-ecommerce-workshop/blob/master/resources/templates/chalice-ecommerce.template.yaml).
 
 Once you have the template file on your machine, run the following command to deploy the template and create your application stack.
 
