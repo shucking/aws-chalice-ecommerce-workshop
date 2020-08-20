@@ -1,0 +1,1345 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-US" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
+<html lang="en" class="js csstransforms3d">
+<head>
+  <meta charset="utf-8">
+  <meta property="og:title" content="Chalice For Serverless Applications" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="generator" content="Hugo 0.74.1" />
+  <meta name="description" content="Chalice For Serverless Applications">
+<meta name="author" content="Madhav Mehta">
+
+  <link rel="shortcut icon" href="https://a0.awsstatic.com/libra-css/images/site/fav/favicon.ico" type="image/ico" />
+<link rel="icon" href="https://a0.awsstatic.com/libra-css/images/site/fav/favicon.ico" type="image/ico" />
+
+  <title>Chalice Setup :: Chalice For Serverless Applications</title>
+
+  
+  <link href="./css/nucleus.css" rel="stylesheet">
+  <link href="./css/fontawesome-all.min.css" rel="stylesheet">
+  <link href="./css/hybrid.css" rel="stylesheet">
+  <link href="./css/featherlight.min.css" rel="stylesheet">
+  <link href="./css/perfect-scrollbar.min.css" rel="stylesheet">
+  <link href="./css/auto-complete.css" rel="stylesheet">
+  <link href="./css/atom-one-dark-reasonable.css" rel="stylesheet">
+  <link href="./css/theme.css" rel="stylesheet">
+  <link href="./css/hugo-theme.css" rel="stylesheet">
+  
+  <link href="./css/theme-aws.css" rel="stylesheet">
+  
+
+  <script src="./js/jquery-3.3.1.min.js"></script>
+
+  <style>
+    :root #header + #content > #left > #rlblock_left{
+        display:none !important;
+    }
+    
+      :not(pre) > code + span.copy-to-clipboard {
+          display: none;
+      }
+    
+  </style>
+  
+</head>
+
+<body class="" data-url="./chalice-setup.html">
+  <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <div>
+    <a href="./" title="Go home">
+        <img style="vertical-align:middle" src="./images/logo.png" height="70px" />
+    </a>
+</div>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="./js/lunr.min.js"></script>
+<script type="text/javascript" src="./js/auto-complete.js"></script>
+<script type="text/javascript">
+    
+        var baseurl = "";
+    
+</script>
+<script type="text/javascript" src="./js/search.js"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/start.html" title="Getting Started" class="dd-item 
+        
+        
+        
+        ">
+      <a href="./start.html">
+          <b>1. </b>Getting Started
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/start/installation.html" title="Install Chalice" class="dd-item 
+        
+        
+        
+        ">
+      <a href="./start/installation.html">
+          <b>1.1 </b>Install Chalice
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/start/basics.html" title="Chalice Basics" class="dd-item 
+        
+        
+        
+        ">
+      <a href="./start/basics.html">
+          <b>1.2 </b>Chalice Basics
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/start/takeaways.html" title="Takeaways" class="dd-item 
+        
+        
+        
+        ">
+      <a href="./start/takeaways.html">
+          <b>1.3 </b>Takeaways
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/app-setup.html" title="Application Setup" class="dd-item 
+        
+        
+        
+        ">
+      <a href="./app-setup.html">
+          <b>2. </b>Application Setup
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/app-setup/configure-angular.html" title="Configure Angular Application" class="dd-item 
+        
+        
+        
+        ">
+      <a href="./app-setup/configure-angular.html">
+          <b>2.1 </b>Configure Angular Application
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/app-setup/build-angular.html" title="Build Angular Application" class="dd-item 
+        
+        
+        
+        ">
+      <a href="./app-setup/build-angular.html">
+          <b>2.2 </b>Build Angular Application
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/app-setup/hosting.html" title="Hosting Angular Application" class="dd-item 
+        
+        
+        
+        ">
+      <a href="./app-setup/hosting.html">
+          <b>2.3 </b>Hosting Angular Application
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/chalice-setup.html" title="Chalice Setup" class="dd-item 
+        parent
+        active
+        
+        ">
+      <a href="./chalice-setup.html">
+          <b>3. </b>Chalice Setup
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/chalice-setup/setup.html" title="Project Structure" class="dd-item 
+        
+        
+        
+        ">
+      <a href="./chalice-setup/setup.html">
+          <b>3.1 </b>Project Structure
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/chalice-setup/policy.html" title="Chalice Policy" class="dd-item 
+        
+        
+        
+        ">
+      <a href="./chalice-setup/policy.html">
+          <b>3.2 </b>Chalice Policy
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/chalice-setup/multifile.html" title="Multifile and Blueprints" class="dd-item 
+        
+        
+        
+        ">
+      <a href="./chalice-setup/multifile.html">
+          <b>3.3 </b>Multifile and Blueprints
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/chalice-dev.html" title="Chalice Development" class="dd-item 
+        
+        
+        
+        ">
+      <a href="./chalice-dev.html">
+          <b>4. </b>Chalice Development
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/chalice-dev/home.html" title="Develop Home Endpoint" class="dd-item 
+        
+        
+        
+        ">
+      <a href="./chalice-dev/home.html">
+          <b>4.1 </b>Home Endpoint
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/chalice-dev/trigger.html" title="Post Confirmation Cognito Trigger" class="dd-item 
+        
+        
+        
+        ">
+      <a href="./chalice-dev/trigger.html">
+          <b>4.2 </b>Cognito Trigger
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/chalice-dev/test-trigger.html" title="Test Post Confirmation Lambda Trigger" class="dd-item 
+        
+        
+        
+        ">
+      <a href="./chalice-dev/test-trigger.html">
+          <b>4.3 </b>Test Cognito Trigger
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/chalice-dev/shopping-util.html" title="Develop Shopping Cart Utility Functions" class="dd-item 
+        
+        
+        
+        ">
+      <a href="./chalice-dev/shopping-util.html">
+          <b>4.4 </b>Shopping Cart Utility
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/chalice-dev/shopping-end.html" title="Develop Shopping Cart Endpoint" class="dd-item 
+        
+        
+        
+        ">
+      <a href="./chalice-dev/shopping-end.html">
+          <b>4.5 </b>Shopping Cart Endpoint
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/chalice-dev/shopping-test.html" title="Testing the Shopping Cart Endpoint" class="dd-item 
+        
+        
+        
+        ">
+      <a href="./chalice-dev/shopping-test.html">
+          <b>4.6 </b>Test Shopping Cart
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/chalice-dev/checkout-util.html" title="Developing Checkout Utility Functions" class="dd-item 
+        
+        
+        
+        ">
+      <a href="./chalice-dev/checkout-util.html">
+          <b>4.7 </b>Checkout Utility
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/chalice-dev/checkout-end.html" title="Developing Checkout Endpoint" class="dd-item 
+        
+        
+        
+        ">
+      <a href="./chalice-dev/checkout-end.html">
+          <b>4.8 </b>Checkout Endpoint
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/chalice-dev/checkout-test.html" title="Testing the Checkout Endpoint" class="dd-item 
+        
+        
+        
+        ">
+      <a href="./chalice-dev/checkout-test.html">
+          <b>4.9 </b>Test Checkout
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/chalice-dev/order-util.html" title="Developing Order History Utility" class="dd-item 
+        
+        
+        
+        ">
+      <a href="./chalice-dev/order-util.html">
+          <b>4.10 </b>Order History Utility
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/chalice-dev/order-end.html" title="Developing Order History Endpoint" class="dd-item 
+        
+        
+        
+        ">
+      <a href="./chalice-dev/order-end.html">
+          <b>4.11 </b>Order History Endpoint
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/chalice-dev/order-test.html" title="Testing the Order History Endpoint" class="dd-item 
+        
+        
+        
+        ">
+      <a href="./chalice-dev/order-test.html">
+          <b>4.12 </b>Testing Order History
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/cleanup.html" title="Cleanup" class="dd-item 
+        
+        
+        
+        ">
+      <a href="./cleanup.html">
+          <b>5. </b>Cleanup
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+
+    
+    <section id="footer">
+      <left>
+
+    <h5 class="copyright">&copy; 2020 Amazon Web Services, Inc. or its Affiliates. All rights reserved.<h5>
+
+</left>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+  <section id="body">
+    <div id="overlay"></div>
+    <div class="padding highlightable">
+      
+      <div>
+        <div id="top-bar">
+          
+          
+          
+          
+          <div id="top-github-link">
+            <a class="github-link" title='Edit this page' href="https://code.amazon.com/packages/Aws-workshop-template/blobs/master/--/workshop/content/chalice-setup/_index.md"
+              target="blank">
+              <i class="fas fa-code-branch"></i>
+              <span id="top-github-link-text">Edit this page</span>
+            </a>
+          </div>
+          
+          
+          
+          <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+            <span id="sidebar-toggle-span">
+              <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                <i class="fa fa-bars"></i>
+              </a>
+            </span>
+            
+            <span class="links">
+              
+          
+          
+          
+          
+          
+          
+          <a href='./'>Chalice For Serverless Applications</a> > Chalice Setup
+          
+          
+          
+          
+            </span>
+          </div>
+          
+        </div>
+      </div>
+      
+
+      
+      <div id="chapter">
+        
+        <div id="body-inner">
+          <h1>Chalice Setup</h1>
+          
+          
+
+
+
+	<p>In this section, you will learn about and set up some of the essentials for the Chalice project.</p>
+
+
+
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+            </div> 
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="./app-setup/hosting.html" title="Hosting Angular Application"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="./chalice-setup/setup.html" title="Project Structure" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="./js/clipboard.min.js"></script>
+    <script src="./js/perfect-scrollbar.min.js"></script>
+    <script src="./js/perfect-scrollbar.jquery.min.js"></script>
+    <script src="./js/jquery.sticky.js"></script>
+    <script src="./js/featherlight.min.js"></script>
+    <script src="./js/html5shiv-printshiv.min.js"></script>
+    <script src="./js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="./js/modernizr.custom-3.6.0.js"></script>
+    <script src="./js/learn.js"></script>
+    <script src="./js/hugo-learn.js"></script>
+
+    <link href="./mermaid/mermaid.css" rel="stylesheet" />
+    <script src="./mermaid/mermaid.js"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    <div id = 'kinesisStreamName' title = ""/></div>
+<div id = 'cognitoPoolId' title = ""/></div>
+<div id = 'awsRegion' title = ""/></div>
+<div id = 'contentId' title = ""/></div>
+<div id = 'language' title = "en"/></div>
+<div id = 'versions' title = ""/></div>
+
+<script src="https://sdk.amazonaws.com/js/aws-sdk-2.283.1.min.js"></script>
+<script src="./js/kinesis.js"></script>
+  </body>
+</html>

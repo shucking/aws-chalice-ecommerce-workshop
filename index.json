@@ -1,0 +1,108 @@
+[
+	{	"pageTitle": "Index",
+		"relativePagePath": "/en/"
+	},
+	{
+		"pageTitle": "Getting Started",
+		"relativePagePath": "/start.html"
+	},
+	{
+		"pageTitle": "Install Chalice",
+		"relativePagePath": "/start/installation.html"
+	},
+	{
+		"pageTitle": "Chalice Basics",
+		"relativePagePath": "/start/basics.html"
+	},
+	{
+		"pageTitle": "Takeaways",
+		"relativePagePath": "/start/takeaways.html"
+	},
+	{
+		"pageTitle": "Application Setup",
+		"relativePagePath": "/app-setup.html"
+	},
+	{
+		"pageTitle": "Configure Angular Application",
+		"relativePagePath": "/app-setup/configure-angular.html"
+	},
+	{
+		"pageTitle": "Build Angular Application",
+		"relativePagePath": "/app-setup/build-angular.html"
+	},
+	{
+		"pageTitle": "Hosting Angular Application",
+		"relativePagePath": "/app-setup/hosting.html"
+	},
+	{
+		"pageTitle": "Chalice Setup",
+		"relativePagePath": "/chalice-setup.html"
+	},
+	{
+		"pageTitle": "Project Structure",
+		"relativePagePath": "/chalice-setup/setup.html"
+	},
+	{
+		"pageTitle": "Chalice Policy",
+		"relativePagePath": "/chalice-setup/policy.html"
+	},
+	{
+		"pageTitle": "Multifile and Blueprints",
+		"relativePagePath": "/chalice-setup/multifile.html"
+	},
+	{
+		"pageTitle": "Chalice Development",
+		"relativePagePath": "/chalice-dev.html"
+	},
+	{
+		"pageTitle": "Develop Home Endpoint",
+		"relativePagePath": "/chalice-dev/home.html"
+	},
+	{
+		"pageTitle": "Post Confirmation Cognito Trigger",
+		"relativePagePath": "/chalice-dev/trigger.html"
+	},
+	{
+		"pageTitle": "Test Post Confirmation Lambda Trigger",
+		"relativePagePath": "/chalice-dev/test-trigger.html"
+	},
+	{
+		"pageTitle": "Develop Shopping Cart Utility Functions",
+		"relativePagePath": "/chalice-dev/shopping-util.html"
+	},
+	{
+		"pageTitle": "Develop Shopping Cart Endpoint",
+		"relativePagePath": "/chalice-dev/shopping-end.html"
+	},
+	{
+		"pageTitle": "Testing the Shopping Cart Endpoint",
+		"relativePagePath": "/chalice-dev/shopping-test.html"
+	},
+	{
+		"pageTitle": "Developing Checkout Utility Functions",
+		"relativePagePath": "/chalice-dev/checkout-util.html"
+	},
+	{
+		"pageTitle": "Developing Checkout Endpoint",
+		"relativePagePath": "/chalice-dev/checkout-end.html"
+	},
+	{
+		"pageTitle": "Testing the Checkout Endpoint",
+		"relativePagePath": "/chalice-dev/checkout-test.html"
+	},
+	{
+		"pageTitle": "Developing Order History Utility",
+		"relativePagePath": "/chalice-dev/order-util.html"
+	},
+	{
+		"pageTitle": "Developing Order History Endpoint",
+		"relativePagePath": "/chalice-dev/order-end.html"
+	},
+	{
+		"pageTitle": "Testing the Order History Endpoint",
+		"relativePagePath": "/chalice-dev/order-test.html"
+	},
+	{
+		"pageTitle": "Cleanup",
+		"relativePagePath": "/cleanup.html"
+	}]

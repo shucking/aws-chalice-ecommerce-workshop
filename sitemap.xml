@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>/</loc>
+  </url>
+  
+  <url>
+    <loc>/start.html</loc>
+  </url>
+  
+  <url>
+    <loc>/start/installation.html</loc>
+  </url>
+  
+  <url>
+    <loc>/app-setup.html</loc>
+  </url>
+  
+  <url>
+    <loc>/start/basics.html</loc>
+  </url>
+  
+  <url>
+    <loc>/app-setup/configure-angular.html</loc>
+  </url>
+  
+  <url>
+    <loc>/chalice-dev/home.html</loc>
+  </url>
+  
+  <url>
+    <loc>/chalice-setup/setup.html</loc>
+  </url>
+  
+  <url>
+    <loc>/start/takeaways.html</loc>
+  </url>
+  
+  <url>
+    <loc>/app-setup/build-angular.html</loc>
+  </url>
+  
+  <url>
+    <loc>/chalice-setup/policy.html</loc>
+  </url>
+  
+  <url>
+    <loc>/chalice-setup.html</loc>
+  </url>
+  
+  <url>
+    <loc>/chalice-dev/trigger.html</loc>
+  </url>
+  
+  <url>
+    <loc>/chalice-dev.html</loc>
+  </url>
+  
+  <url>
+    <loc>/app-setup/hosting.html</loc>
+  </url>
+  
+  <url>
+    <loc>/chalice-setup/multifile.html</loc>
+  </url>
+  
+  <url>
+    <loc>/chalice-dev/test-trigger.html</loc>
+  </url>
+  
+  <url>
+    <loc>/cleanup.html</loc>
+  </url>
+  
+  <url>
+    <loc>/chalice-dev/shopping-util.html</loc>
+  </url>
+  
+  <url>
+    <loc>/chalice-dev/shopping-end.html</loc>
+  </url>
+  
+  <url>
+    <loc>/chalice-dev/shopping-test.html</loc>
+  </url>
+  
+  <url>
+    <loc>/chalice-dev/checkout-util.html</loc>
+  </url>
+  
+  <url>
+    <loc>/chalice-dev/checkout-end.html</loc>
+  </url>
+  
+  <url>
+    <loc>/chalice-dev/checkout-test.html</loc>
+  </url>
+  
+  <url>
+    <loc>/chalice-dev/order-util.html</loc>
+  </url>
+  
+  <url>
+    <loc>/chalice-dev/order-end.html</loc>
+  </url>
+  
+  <url>
+    <loc>/chalice-dev/order-test.html</loc>
+  </url>
+  
+  <url>
+    <loc>/categories.html</loc>
+  </url>
+  
+  <url>
+    <loc>/tags.html</loc>
+  </url>
+  
+</urlset>

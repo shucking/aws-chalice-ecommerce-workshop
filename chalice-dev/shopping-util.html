@@ -1,0 +1,1474 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-US" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
+<html lang="en" class="js csstransforms3d">
+<head>
+  <meta charset="utf-8">
+  <meta property="og:title" content="Chalice For Serverless Applications" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="generator" content="Hugo 0.74.1" />
+  <meta name="description" content="Chalice For Serverless Applications">
+<meta name="author" content="Madhav Mehta">
+
+  <link rel="shortcut icon" href="https://a0.awsstatic.com/libra-css/images/site/fav/favicon.ico" type="image/ico" />
+<link rel="icon" href="https://a0.awsstatic.com/libra-css/images/site/fav/favicon.ico" type="image/ico" />
+
+  <title>Develop Shopping Cart Utility Functions :: Chalice For Serverless Applications</title>
+
+  
+  <link href="../css/nucleus.css" rel="stylesheet">
+  <link href="../css/fontawesome-all.min.css" rel="stylesheet">
+  <link href="../css/hybrid.css" rel="stylesheet">
+  <link href="../css/featherlight.min.css" rel="stylesheet">
+  <link href="../css/perfect-scrollbar.min.css" rel="stylesheet">
+  <link href="../css/auto-complete.css" rel="stylesheet">
+  <link href="../css/atom-one-dark-reasonable.css" rel="stylesheet">
+  <link href="../css/theme.css" rel="stylesheet">
+  <link href="../css/hugo-theme.css" rel="stylesheet">
+  
+  <link href="../css/theme-aws.css" rel="stylesheet">
+  
+
+  <script src="../js/jquery-3.3.1.min.js"></script>
+
+  <style>
+    :root #header + #content > #left > #rlblock_left{
+        display:none !important;
+    }
+    
+      :not(pre) > code + span.copy-to-clipboard {
+          display: none;
+      }
+    
+  </style>
+  
+</head>
+
+<body class="" data-url="../chalice-dev/shopping-util.html">
+  <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <div>
+    <a href="../" title="Go home">
+        <img style="vertical-align:middle" src="../images/logo.png" height="70px" />
+    </a>
+</div>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="../js/lunr.min.js"></script>
+<script type="text/javascript" src="../js/auto-complete.js"></script>
+<script type="text/javascript">
+    
+        var baseurl = "";
+    
+</script>
+<script type="text/javascript" src="../js/search.js"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/start.html" title="Getting Started" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../start.html">
+          <b>1. </b>Getting Started
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/start/installation.html" title="Install Chalice" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../start/installation.html">
+          <b>1.1 </b>Install Chalice
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/start/basics.html" title="Chalice Basics" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../start/basics.html">
+          <b>1.2 </b>Chalice Basics
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/start/takeaways.html" title="Takeaways" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../start/takeaways.html">
+          <b>1.3 </b>Takeaways
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/app-setup.html" title="Application Setup" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../app-setup.html">
+          <b>2. </b>Application Setup
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/app-setup/configure-angular.html" title="Configure Angular Application" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../app-setup/configure-angular.html">
+          <b>2.1 </b>Configure Angular Application
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/app-setup/build-angular.html" title="Build Angular Application" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../app-setup/build-angular.html">
+          <b>2.2 </b>Build Angular Application
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/app-setup/hosting.html" title="Hosting Angular Application" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../app-setup/hosting.html">
+          <b>2.3 </b>Hosting Angular Application
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/chalice-setup.html" title="Chalice Setup" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../chalice-setup.html">
+          <b>3. </b>Chalice Setup
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/chalice-setup/setup.html" title="Project Structure" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../chalice-setup/setup.html">
+          <b>3.1 </b>Project Structure
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/chalice-setup/policy.html" title="Chalice Policy" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../chalice-setup/policy.html">
+          <b>3.2 </b>Chalice Policy
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/chalice-setup/multifile.html" title="Multifile and Blueprints" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../chalice-setup/multifile.html">
+          <b>3.3 </b>Multifile and Blueprints
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/chalice-dev.html" title="Chalice Development" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="../chalice-dev.html">
+          <b>4. </b>Chalice Development
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/chalice-dev/home.html" title="Develop Home Endpoint" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../chalice-dev/home.html">
+          <b>4.1 </b>Home Endpoint
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/chalice-dev/trigger.html" title="Post Confirmation Cognito Trigger" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../chalice-dev/trigger.html">
+          <b>4.2 </b>Cognito Trigger
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/chalice-dev/test-trigger.html" title="Test Post Confirmation Lambda Trigger" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../chalice-dev/test-trigger.html">
+          <b>4.3 </b>Test Cognito Trigger
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/chalice-dev/shopping-util.html" title="Develop Shopping Cart Utility Functions" class="dd-item 
+        parent
+        active
+        
+        ">
+      <a href="../chalice-dev/shopping-util.html">
+          <b>4.4 </b>Shopping Cart Utility
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/chalice-dev/shopping-end.html" title="Develop Shopping Cart Endpoint" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../chalice-dev/shopping-end.html">
+          <b>4.5 </b>Shopping Cart Endpoint
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/chalice-dev/shopping-test.html" title="Testing the Shopping Cart Endpoint" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../chalice-dev/shopping-test.html">
+          <b>4.6 </b>Test Shopping Cart
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/chalice-dev/checkout-util.html" title="Developing Checkout Utility Functions" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../chalice-dev/checkout-util.html">
+          <b>4.7 </b>Checkout Utility
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/chalice-dev/checkout-end.html" title="Developing Checkout Endpoint" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../chalice-dev/checkout-end.html">
+          <b>4.8 </b>Checkout Endpoint
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/chalice-dev/checkout-test.html" title="Testing the Checkout Endpoint" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../chalice-dev/checkout-test.html">
+          <b>4.9 </b>Test Checkout
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/chalice-dev/order-util.html" title="Developing Order History Utility" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../chalice-dev/order-util.html">
+          <b>4.10 </b>Order History Utility
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/chalice-dev/order-end.html" title="Developing Order History Endpoint" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../chalice-dev/order-end.html">
+          <b>4.11 </b>Order History Endpoint
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/chalice-dev/order-test.html" title="Testing the Order History Endpoint" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../chalice-dev/order-test.html">
+          <b>4.12 </b>Testing Order History
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/cleanup.html" title="Cleanup" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../cleanup.html">
+          <b>5. </b>Cleanup
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+
+    
+    <section id="footer">
+      <left>
+
+    <h5 class="copyright">&copy; 2020 Amazon Web Services, Inc. or its Affiliates. All rights reserved.<h5>
+
+</left>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+  <section id="body">
+    <div id="overlay"></div>
+    <div class="padding highlightable">
+      
+      <div>
+        <div id="top-bar">
+          
+          
+          
+          
+          <div id="top-github-link">
+            <a class="github-link" title='Edit this page' href="https://code.amazon.com/packages/Aws-workshop-template/blobs/master/--/workshop/content/chalice-dev/shopping-util/_index.md"
+              target="blank">
+              <i class="fas fa-code-branch"></i>
+              <span id="top-github-link-text">Edit this page</span>
+            </a>
+          </div>
+          
+          
+          
+          <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+            <span id="sidebar-toggle-span">
+              <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                <i class="fa fa-bars"></i>
+              </a>
+            </span>
+            
+            <span id="toc-menu"><i class="fa fa-list-alt"></i></span>
+            
+            <span class="links">
+              
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href='../'>Chalice For Serverless Applications</a> > <a href='../chalice-dev.html'>Chalice Development</a> > Develop Shopping Cart Utility Functions
+          
+          
+          
+          
+          
+          
+            </span>
+          </div>
+          
+          <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#utilpy">util.py</a>
+      <ul>
+        <li><a href="#get_shopping_cart">get_shopping_cart()</a></li>
+        <li><a href="#calculate_total_item_price">calculate_total_item_price()</a></li>
+        <li><a href="#update_shopping_cart">update_shopping_cart()</a></li>
+        <li><a href="#remove_from_shopping_cart">remove_from_shopping_cart()</a></li>
+        <li><a href="#clear_shopping_cart">clear_shopping_cart()</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+          
+        </div>
+      </div>
+      
+
+      
+        <div id="body-inner">
+          <h1>Develop Shopping Cart Utility Functions</h1>
+          
+          
+
+
+
+	<p>During this module, you will develop the various utility functions for the <code>/shopping_cart</code> endpoint.</p>
+<h2 id="utilpy">util.py</h2>
+<p>At the top of your <code>util.py</code> file, add the following imports:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> datetime <span style="color:#f92672">import</span> datetime
+<span style="color:#f92672">from</span> decimal <span style="color:#f92672">import</span> Decimal
+<span style="color:#f92672">from</span> hashlib <span style="color:#f92672">import</span> sha256
+</code></pre></div><p>You will also need to add quite a few functions to the file to develop proper shopping cart functionality.</p>
+<h3 id="get_shopping_cart">get_shopping_cart()</h3>
+<p>This function builds the necessary DynamoDB request parameters to get the current user&rsquo;s shopping cart.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_shopping_cart</span>(user_id):
+    <span style="color:#75715e"># Build params for DynamoDB operation</span>
+    params <span style="color:#f92672">=</span> {
+        <span style="color:#e6db74">&#39;operation&#39;</span>: <span style="color:#e6db74">&#39;read&#39;</span>,
+        <span style="color:#e6db74">&#39;payload&#39;</span>: {
+            <span style="color:#e6db74">&#39;Key&#39;</span>: {
+                <span style="color:#e6db74">&#39;PK&#39;</span>: user_id,
+                <span style="color:#e6db74">&#39;SK&#39;</span>: user_id},
+            <span style="color:#e6db74">&#39;ProjectionExpression&#39;</span>: <span style="color:#e6db74">&#39;shopping_cart&#39;</span>}}
+
+    <span style="color:#75715e"># Call DynamoDB</span>
+    response <span style="color:#f92672">=</span> perform_standard_operation(params)
+
+    shopping_cart <span style="color:#f92672">=</span> response[<span style="color:#e6db74">&#39;Item&#39;</span>][<span style="color:#e6db74">&#39;shopping_cart&#39;</span>]
+    <span style="color:#66d9ef">return</span> shopping_cart
+</code></pre></div><h3 id="calculate_total_item_price">calculate_total_item_price()</h3>
+<p>This function calculates the total price of an item based on its quantity and price.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">calculate_total_item_price</span>(product_name, quantity, category):
+    <span style="color:#e6db74">&#34;&#34;&#34;
+</span><span style="color:#e6db74">    Calculate the total price of an item based on its quantity. The exact price of the
+</span><span style="color:#e6db74">    item is retrieved from DynamoDB.
+</span><span style="color:#e6db74">    :param category: the categoryof the item
+</span><span style="color:#e6db74">    :param product_name: the name of the item
+</span><span style="color:#e6db74">    :param quantity: the integer value describing the quantity of the item
+</span><span style="color:#e6db74">    :return: total_item_price: the total price of the item
+</span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+    params <span style="color:#f92672">=</span> {
+        <span style="color:#e6db74">&#39;operation&#39;</span>: <span style="color:#e6db74">&#39;query&#39;</span>,
+        <span style="color:#e6db74">&#39;payload&#39;</span>: {
+            <span style="color:#e6db74">&#39;IndexName&#39;</span>: <span style="color:#e6db74">&#39;GSI-1&#39;</span>,
+            <span style="color:#e6db74">&#39;FilterExpression&#39;</span>: <span style="color:#e6db74">&#39;begins_with(product_name, :pn)&#39;</span>,
+            <span style="color:#e6db74">&#39;KeyConditionExpression&#39;</span>: <span style="color:#e6db74">&#39;SK = :sk AND begins_with(PK, :pk)&#39;</span>,
+            <span style="color:#e6db74">&#39;ExpressionAttributeValues&#39;</span>: {
+                <span style="color:#e6db74">&#39;:sk&#39;</span>: category,
+                <span style="color:#e6db74">&#39;:pk&#39;</span>: <span style="color:#e6db74">&#39;PROD#&#39;</span>,
+                <span style="color:#e6db74">&#39;:pn&#39;</span>: product_name},
+            <span style="color:#e6db74">&#39;ProjectionExpression&#39;</span>: <span style="color:#e6db74">&#39;price&#39;</span>}}
+    response <span style="color:#f92672">=</span> perform_standard_operation(params)
+    item_price <span style="color:#f92672">=</span> response[<span style="color:#e6db74">&#39;Items&#39;</span>][<span style="color:#ae81ff">0</span>][<span style="color:#e6db74">&#39;price&#39;</span>]
+    total_item_price <span style="color:#f92672">=</span> Decimal(item_price) <span style="color:#f92672">*</span> int(quantity)
+    <span style="color:#66d9ef">return</span> total_item_price
+</code></pre></div><h3 id="update_shopping_cart">update_shopping_cart()</h3>
+<p>This function develops the necessary database parameters to update the current user&rsquo;s shopping cart.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">update_shopping_cart</span>(user_id, cart_item):
+    item_price <span style="color:#f92672">=</span> calculate_total_item_price(cart_item[<span style="color:#e6db74">&#39;product_name&#39;</span>], cart_item[<span style="color:#e6db74">&#39;quantity&#39;</span>], cart_item[<span style="color:#e6db74">&#39;category&#39;</span>])
+    <span style="color:#75715e"># Build params for DynamoDB operation</span>
+    params <span style="color:#f92672">=</span> {
+        <span style="color:#e6db74">&#39;operation&#39;</span>: <span style="color:#e6db74">&#39;update&#39;</span>,
+        <span style="color:#e6db74">&#39;payload&#39;</span>: {
+            <span style="color:#e6db74">&#39;Key&#39;</span>: {<span style="color:#e6db74">&#39;PK&#39;</span>: user_id, <span style="color:#e6db74">&#39;SK&#39;</span>: user_id},
+            <span style="color:#e6db74">&#39;UpdateExpression&#39;</span>: <span style="color:#e6db74">&#39;SET #cart.#prod_name=:s&#39;</span>,
+            <span style="color:#e6db74">&#39;ExpressionAttributeValues&#39;</span>: {
+                <span style="color:#e6db74">&#39;:s&#39;</span>:  {
+                    <span style="color:#e6db74">&#39;product_name&#39;</span>: cart_item[<span style="color:#e6db74">&#39;product_name&#39;</span>],
+                    <span style="color:#e6db74">&#39;quantity&#39;</span>: cart_item[<span style="color:#e6db74">&#39;quantity&#39;</span>],
+                    <span style="color:#e6db74">&#39;total_item_price&#39;</span>: item_price,
+                    <span style="color:#e6db74">&#39;img_url&#39;</span>: cart_item[<span style="color:#e6db74">&#39;img_url&#39;</span>]}},
+            <span style="color:#e6db74">&#39;ExpressionAttributeNames&#39;</span>: {
+                <span style="color:#e6db74">&#39;#cart&#39;</span>: <span style="color:#e6db74">&#39;shopping_cart&#39;</span>,
+                <span style="color:#e6db74">&#39;#prod_name&#39;</span>: cart_item[<span style="color:#e6db74">&#39;product_name&#39;</span>]
+            },
+            <span style="color:#e6db74">&#39;ReturnValues&#39;</span>: <span style="color:#e6db74">&#39;UPDATED_NEW&#39;</span>}}
+    <span style="color:#75715e"># Call DynamoDB</span>
+    response <span style="color:#f92672">=</span> perform_standard_operation(params)
+    <span style="color:#66d9ef">print</span>(response)
+    shopping_cart <span style="color:#f92672">=</span> response[<span style="color:#e6db74">&#39;Attributes&#39;</span>][<span style="color:#e6db74">&#39;shopping_cart&#39;</span>]
+    <span style="color:#66d9ef">return</span> shopping_cart
+</code></pre></div><h3 id="remove_from_shopping_cart">remove_from_shopping_cart()</h3>
+<p>This function builds the necessary dataase request parameters to remove an item from the current user&rsquo;s shopping cart.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">remove_from_shopping_cart</span>(user_id, cart_item):
+    params <span style="color:#f92672">=</span> {
+        <span style="color:#e6db74">&#39;operation&#39;</span>: <span style="color:#e6db74">&#39;update&#39;</span>,
+        <span style="color:#e6db74">&#39;payload&#39;</span>: {
+            <span style="color:#e6db74">&#39;Key&#39;</span>: {<span style="color:#e6db74">&#39;PK&#39;</span>: user_id, <span style="color:#e6db74">&#39;SK&#39;</span>: user_id},
+            <span style="color:#e6db74">&#39;UpdateExpression&#39;</span>: <span style="color:#e6db74">&#39;remove #cart.#prod_name&#39;</span>,
+            <span style="color:#e6db74">&#39;ExpressionAttributeNames&#39;</span>: {
+                <span style="color:#e6db74">&#39;#cart&#39;</span>: <span style="color:#e6db74">&#39;shopping_cart&#39;</span>,
+                <span style="color:#e6db74">&#39;#prod_name&#39;</span>: cart_item[<span style="color:#e6db74">&#39;product_name&#39;</span>]},
+            <span style="color:#e6db74">&#39;ReturnValues&#39;</span>: <span style="color:#e6db74">&#39;UPDATED_NEW&#39;</span>}}
+    response <span style="color:#f92672">=</span> perform_standard_operation(params)
+    status_code <span style="color:#f92672">=</span> response[<span style="color:#e6db74">&#39;ResponseMetadata&#39;</span>][<span style="color:#e6db74">&#39;HTTPStatusCode&#39;</span>]
+    <span style="color:#66d9ef">return</span> status_code
+</code></pre></div><h3 id="clear_shopping_cart">clear_shopping_cart()</h3>
+<p>This function builds the necessary database request parameters to clear the current user&rsquo;s shopping cart.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">clear_shopping_cart</span>(user_id):
+    params <span style="color:#f92672">=</span> {
+        <span style="color:#e6db74">&#39;operation&#39;</span>: <span style="color:#e6db74">&#39;update&#39;</span>,
+        <span style="color:#e6db74">&#39;payload&#39;</span>: {
+            <span style="color:#e6db74">&#39;Key&#39;</span>: {<span style="color:#e6db74">&#39;PK&#39;</span>: user_id, <span style="color:#e6db74">&#39;SK&#39;</span>: user_id},
+            <span style="color:#e6db74">&#39;UpdateExpression&#39;</span>: <span style="color:#e6db74">&#39;set #cart=:s&#39;</span>,
+            <span style="color:#e6db74">&#39;ExpressionAttributeValues&#39;</span>: {<span style="color:#e6db74">&#39;:s&#39;</span>: {}},
+            <span style="color:#e6db74">&#39;ExpressionAttributeNames&#39;</span>: {<span style="color:#e6db74">&#39;#cart&#39;</span>: <span style="color:#e6db74">&#39;shopping_cart&#39;</span>},
+            <span style="color:#e6db74">&#39;ReturnValues&#39;</span>: <span style="color:#e6db74">&#39;UPDATED_NEW&#39;</span>
+        }
+    }
+    response <span style="color:#f92672">=</span> perform_standard_operation(params)
+    shopping_cart <span style="color:#f92672">=</span> response[<span style="color:#e6db74">&#39;Attributes&#39;</span>][<span style="color:#e6db74">&#39;shopping_cart&#39;</span>]
+    <span style="color:#66d9ef">return</span> shopping_cart
+</code></pre></div>
+
+
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="../chalice-dev/test-trigger.html" title="Test Post Confirmation Lambda Trigger"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="../chalice-dev/shopping-end.html" title="Develop Shopping Cart Endpoint" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="../js/clipboard.min.js"></script>
+    <script src="../js/perfect-scrollbar.min.js"></script>
+    <script src="../js/perfect-scrollbar.jquery.min.js"></script>
+    <script src="../js/jquery.sticky.js"></script>
+    <script src="../js/featherlight.min.js"></script>
+    <script src="../js/html5shiv-printshiv.min.js"></script>
+    <script src="../js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="../js/modernizr.custom-3.6.0.js"></script>
+    <script src="../js/learn.js"></script>
+    <script src="../js/hugo-learn.js"></script>
+
+    <link href="../mermaid/mermaid.css" rel="stylesheet" />
+    <script src="../mermaid/mermaid.js"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    <div id = 'kinesisStreamName' title = ""/></div>
+<div id = 'cognitoPoolId' title = ""/></div>
+<div id = 'awsRegion' title = ""/></div>
+<div id = 'contentId' title = ""/></div>
+<div id = 'language' title = "en"/></div>
+<div id = 'versions' title = ""/></div>
+
+<script src="https://sdk.amazonaws.com/js/aws-sdk-2.283.1.min.js"></script>
+<script src="../js/kinesis.js"></script>
+  </body>
+</html>

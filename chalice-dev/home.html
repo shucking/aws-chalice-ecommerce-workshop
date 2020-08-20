@@ -1,0 +1,1476 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en-US" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
+<html lang="en" class="js csstransforms3d">
+<head>
+  <meta charset="utf-8">
+  <meta property="og:title" content="Chalice For Serverless Applications" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="generator" content="Hugo 0.74.1" />
+  <meta name="description" content="Chalice For Serverless Applications">
+<meta name="author" content="Madhav Mehta">
+
+  <link rel="shortcut icon" href="https://a0.awsstatic.com/libra-css/images/site/fav/favicon.ico" type="image/ico" />
+<link rel="icon" href="https://a0.awsstatic.com/libra-css/images/site/fav/favicon.ico" type="image/ico" />
+
+  <title>Develop Home Endpoint :: Chalice For Serverless Applications</title>
+
+  
+  <link href="../css/nucleus.css" rel="stylesheet">
+  <link href="../css/fontawesome-all.min.css" rel="stylesheet">
+  <link href="../css/hybrid.css" rel="stylesheet">
+  <link href="../css/featherlight.min.css" rel="stylesheet">
+  <link href="../css/perfect-scrollbar.min.css" rel="stylesheet">
+  <link href="../css/auto-complete.css" rel="stylesheet">
+  <link href="../css/atom-one-dark-reasonable.css" rel="stylesheet">
+  <link href="../css/theme.css" rel="stylesheet">
+  <link href="../css/hugo-theme.css" rel="stylesheet">
+  
+  <link href="../css/theme-aws.css" rel="stylesheet">
+  
+
+  <script src="../js/jquery-3.3.1.min.js"></script>
+
+  <style>
+    :root #header + #content > #left > #rlblock_left{
+        display:none !important;
+    }
+    
+      :not(pre) > code + span.copy-to-clipboard {
+          display: none;
+      }
+    
+  </style>
+  
+</head>
+
+<body class="" data-url="../chalice-dev/home.html">
+  <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <div>
+    <a href="../" title="Go home">
+        <img style="vertical-align:middle" src="../images/logo.png" height="70px" />
+    </a>
+</div>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="../js/lunr.min.js"></script>
+<script type="text/javascript" src="../js/auto-complete.js"></script>
+<script type="text/javascript">
+    
+        var baseurl = "";
+    
+</script>
+<script type="text/javascript" src="../js/search.js"></script>
+
+    
+  </div>
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/start.html" title="Getting Started" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../start.html">
+          <b>1. </b>Getting Started
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/start/installation.html" title="Install Chalice" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../start/installation.html">
+          <b>1.1 </b>Install Chalice
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/start/basics.html" title="Chalice Basics" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../start/basics.html">
+          <b>1.2 </b>Chalice Basics
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/start/takeaways.html" title="Takeaways" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../start/takeaways.html">
+          <b>1.3 </b>Takeaways
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/app-setup.html" title="Application Setup" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../app-setup.html">
+          <b>2. </b>Application Setup
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/app-setup/configure-angular.html" title="Configure Angular Application" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../app-setup/configure-angular.html">
+          <b>2.1 </b>Configure Angular Application
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/app-setup/build-angular.html" title="Build Angular Application" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../app-setup/build-angular.html">
+          <b>2.2 </b>Build Angular Application
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/app-setup/hosting.html" title="Hosting Angular Application" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../app-setup/hosting.html">
+          <b>2.3 </b>Hosting Angular Application
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/chalice-setup.html" title="Chalice Setup" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../chalice-setup.html">
+          <b>3. </b>Chalice Setup
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/chalice-setup/setup.html" title="Project Structure" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../chalice-setup/setup.html">
+          <b>3.1 </b>Project Structure
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/chalice-setup/policy.html" title="Chalice Policy" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../chalice-setup/policy.html">
+          <b>3.2 </b>Chalice Policy
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/chalice-setup/multifile.html" title="Multifile and Blueprints" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../chalice-setup/multifile.html">
+          <b>3.3 </b>Multifile and Blueprints
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/chalice-dev.html" title="Chalice Development" class="dd-item 
+        parent
+        
+        
+        ">
+      <a href="../chalice-dev.html">
+          <b>4. </b>Chalice Development
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+          
+        
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/chalice-dev/home.html" title="Develop Home Endpoint" class="dd-item 
+        parent
+        active
+        
+        ">
+      <a href="../chalice-dev/home.html">
+          <b>4.1 </b>Home Endpoint
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/chalice-dev/trigger.html" title="Post Confirmation Cognito Trigger" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../chalice-dev/trigger.html">
+          <b>4.2 </b>Cognito Trigger
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/chalice-dev/test-trigger.html" title="Test Post Confirmation Lambda Trigger" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../chalice-dev/test-trigger.html">
+          <b>4.3 </b>Test Cognito Trigger
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/chalice-dev/shopping-util.html" title="Develop Shopping Cart Utility Functions" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../chalice-dev/shopping-util.html">
+          <b>4.4 </b>Shopping Cart Utility
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/chalice-dev/shopping-end.html" title="Develop Shopping Cart Endpoint" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../chalice-dev/shopping-end.html">
+          <b>4.5 </b>Shopping Cart Endpoint
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/chalice-dev/shopping-test.html" title="Testing the Shopping Cart Endpoint" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../chalice-dev/shopping-test.html">
+          <b>4.6 </b>Test Shopping Cart
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/chalice-dev/checkout-util.html" title="Developing Checkout Utility Functions" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../chalice-dev/checkout-util.html">
+          <b>4.7 </b>Checkout Utility
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/chalice-dev/checkout-end.html" title="Developing Checkout Endpoint" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../chalice-dev/checkout-end.html">
+          <b>4.8 </b>Checkout Endpoint
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/chalice-dev/checkout-test.html" title="Testing the Checkout Endpoint" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../chalice-dev/checkout-test.html">
+          <b>4.9 </b>Test Checkout
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/chalice-dev/order-util.html" title="Developing Order History Utility" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../chalice-dev/order-util.html">
+          <b>4.10 </b>Order History Utility
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/chalice-dev/order-end.html" title="Developing Order History Endpoint" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../chalice-dev/order-end.html">
+          <b>4.11 </b>Order History Endpoint
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+ 
+  
+    
+    <li data-nav-id="/chalice-dev/order-test.html" title="Testing the Order History Endpoint" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../chalice-dev/order-test.html">
+          <b>4.12 </b>Testing Order History
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+              
+    </li>
+  
+ 
+
+          
+          
+
+
+ 
+  
+    
+    <li data-nav-id="/cleanup.html" title="Cleanup" class="dd-item 
+        
+        
+        
+        ">
+      <a href="../cleanup.html">
+          <b>5. </b>Cleanup
+          
+      </a>
+      
+              
+    </li>
+  
+ 
+
+          
+         
+    </ul>
+
+    
+    
+
+    
+    <section id="footer">
+      <left>
+
+    <h5 class="copyright">&copy; 2020 Amazon Web Services, Inc. or its Affiliates. All rights reserved.<h5>
+
+</left>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+
+  <section id="body">
+    <div id="overlay"></div>
+    <div class="padding highlightable">
+      
+      <div>
+        <div id="top-bar">
+          
+          
+          
+          
+          <div id="top-github-link">
+            <a class="github-link" title='Edit this page' href="https://code.amazon.com/packages/Aws-workshop-template/blobs/master/--/workshop/content/chalice-dev/home/_index.md"
+              target="blank">
+              <i class="fas fa-code-branch"></i>
+              <span id="top-github-link-text">Edit this page</span>
+            </a>
+          </div>
+          
+          
+          
+          <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+            <span id="sidebar-toggle-span">
+              <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                <i class="fa fa-bars"></i>
+              </a>
+            </span>
+            
+            <span id="toc-menu"><i class="fa fa-list-alt"></i></span>
+            
+            <span class="links">
+              
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href='../'>Chalice For Serverless Applications</a> > <a href='../chalice-dev.html'>Chalice Development</a> > Develop Home Endpoint
+          
+          
+          
+          
+          
+          
+            </span>
+          </div>
+          
+          <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents">
+  <ul>
+    <li><a href="#utilpy">util.py</a>
+      <ul>
+        <li><a href="#standard-operations-function">Standard Operations Function</a></li>
+        <li><a href="#get_products">get_products()</a></li>
+      </ul>
+    </li>
+    <li><a href="#api_endpointspy">api_endpoints.py</a>
+      <ul>
+        <li><a href="#understanding-the-parameters">Understanding the parameters</a></li>
+        <li><a href="#test-the-app">Test the App</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    </div>
+</div>
+
+          
+        </div>
+      </div>
+      
+
+      
+        <div id="body-inner">
+          <h1>Develop Home Endpoint</h1>
+          
+          
+
+
+
+	<p>The <code>/home</code> endpoint will be the most basic route and view function in the entire application. The view function will simply retrieve all of the products in the database and return them as a dictionary.</p>
+<h2 id="utilpy">util.py</h2>
+<p>At the top of your <code>util.py</code> file, import boto3</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">import</span> boto3
+<span style="color:#f92672">import</span> botocore
+<span style="color:#f92672">import</span> os
+
+table <span style="color:#f92672">=</span> boto3<span style="color:#f92672">.</span>resource(<span style="color:#e6db74">&#39;dynamodb&#39;</span>)<span style="color:#f92672">.</span>Table(os<span style="color:#f92672">.</span>environ[<span style="color:#e6db74">&#39;APP_TABLE_NAME&#39;</span>])
+</code></pre></div><p>As you can see, the DynamoDB table is specified by an environment variable called <code>APP_TABLE_NAME</code>. To create environment variables for a Chalice project, you will need to add them to your <code>config.json</code> file with the <strong>environment_variables</strong> config option.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#f92672">&#34;version&#34;</span>: <span style="color:#e6db74">&#34;2.0&#34;</span>,
+  <span style="color:#f92672">&#34;app_name&#34;</span>: <span style="color:#e6db74">&#34;chalice-workshop&#34;</span>,
+  <span style="color:#f92672">&#34;stages&#34;</span>: {
+    <span style="color:#f92672">&#34;dev&#34;</span>: {
+      <span style="color:#f92672">&#34;api_gateway_stage&#34;</span>: <span style="color:#e6db74">&#34;api&#34;</span>,
+      <span style="color:#f92672">&#34;autogen_policy&#34;</span>: <span style="color:#66d9ef">false</span>,
+      <span style="color:#f92672">&#34;iam_policy_file&#34;</span>: <span style="color:#e6db74">&#34;policies/policy-dev.json&#34;</span>,
+      <span style="color:#f92672">&#34;environment_variables&#34;</span>: {
+          <span style="color:#f92672">&#34;APP_TABLE_NAME&#34;</span>: <span style="color:#e6db74">&#34;chalice-demo-table&#34;</span>
+      }
+    }
+  }
+}
+</code></pre></div><h3 id="standard-operations-function">Standard Operations Function</h3>
+<p>Because the application will be making many requests to the database with different operations, formatted database operation requests can be passed to a standardized function and that function can then make the request to the database. This function will be utilized many times across the project.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">perform_standard_operation</span>(params):
+    <span style="color:#e6db74">&#34;&#34;&#34;
+</span><span style="color:#e6db74">    Performs standard operations (create, read, update, query, scan)
+</span><span style="color:#e6db74">    on DynamoDB table based on the parameter payload that was passed
+</span><span style="color:#e6db74">    :param params: the parameters to pass for DynamoDB operation
+</span><span style="color:#e6db74">    :return: DynamoDB operation output
+</span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+    operation <span style="color:#f92672">=</span> params[<span style="color:#e6db74">&#39;operation&#39;</span>]
+    standard_operations <span style="color:#f92672">=</span> {
+        <span style="color:#e6db74">&#39;create&#39;</span>: <span style="color:#66d9ef">lambda</span> x: table<span style="color:#f92672">.</span>put_item(<span style="color:#f92672">**</span>x),
+        <span style="color:#e6db74">&#39;read&#39;</span>: <span style="color:#66d9ef">lambda</span> x: table<span style="color:#f92672">.</span>get_item(<span style="color:#f92672">**</span>x),
+        <span style="color:#e6db74">&#39;update&#39;</span>: <span style="color:#66d9ef">lambda</span> x: table<span style="color:#f92672">.</span>update_item(<span style="color:#f92672">**</span>x),
+        <span style="color:#e6db74">&#39;query&#39;</span>: <span style="color:#66d9ef">lambda</span> x: table<span style="color:#f92672">.</span>query(<span style="color:#f92672">**</span>x),
+        <span style="color:#e6db74">&#39;scan&#39;</span>: <span style="color:#66d9ef">lambda</span> x: table<span style="color:#f92672">.</span>scan(<span style="color:#f92672">**</span>x)
+    }
+
+    <span style="color:#75715e"># Perform the operation that was sent in the params payload.</span>
+    <span style="color:#66d9ef">if</span> operation <span style="color:#f92672">in</span> standard_operations:
+        <span style="color:#66d9ef">try</span>:
+            <span style="color:#66d9ef">return</span> standard_operations[operation](params<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;payload&#39;</span>))
+        <span style="color:#66d9ef">except</span> botocore<span style="color:#f92672">.</span>exceptions<span style="color:#f92672">.</span>ClientError <span style="color:#66d9ef">as</span> e:
+            <span style="color:#66d9ef">return</span> <span style="color:#e6db74">&#39;Client error: {}&#39;</span><span style="color:#f92672">.</span>format(e)
+        <span style="color:#66d9ef">except</span> botocore<span style="color:#f92672">.</span>exceptions<span style="color:#f92672">.</span>ParamValidationError <span style="color:#66d9ef">as</span> e:
+            <span style="color:#66d9ef">raise</span> <span style="color:#a6e22e">ValueError</span>(<span style="color:#e6db74">&#39;Parameters invalid: {}&#39;</span><span style="color:#f92672">.</span>format(e))
+
+    <span style="color:#66d9ef">else</span>:
+        <span style="color:#66d9ef">raise</span> <span style="color:#a6e22e">ValueError</span>(<span style="color:#e6db74">&#39;Unrecognized operation &#34;{}&#34;&#39;</span><span style="color:#f92672">.</span>format(operation))
+</code></pre></div><h3 id="get_products">get_products()</h3>
+<p>This function will generate the required DynamoDB parameters retrieve all of the products in the database.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_products</span>():
+    <span style="color:#75715e"># Create DynamoDB request params</span>
+    params <span style="color:#f92672">=</span> {
+        <span style="color:#e6db74">&#39;operation&#39;</span>: <span style="color:#e6db74">&#39;scan&#39;</span>,
+        <span style="color:#e6db74">&#39;payload&#39;</span>: {
+            <span style="color:#e6db74">&#39;ProjectionExpression&#39;</span>: <span style="color:#e6db74">&#39;SK, img_url, price, product_name&#39;</span>,
+            <span style="color:#e6db74">&#39;FilterExpression&#39;</span>: <span style="color:#e6db74">&#39;begins_with(PK, :pk)&#39;</span>,
+            <span style="color:#e6db74">&#39;ExpressionAttributeValues&#39;</span>: {
+                <span style="color:#e6db74">&#39;:pk&#39;</span>: <span style="color:#e6db74">&#39;PROD#&#39;</span>}}}
+    response <span style="color:#f92672">=</span> perform_standard_operation(params)
+
+    products <span style="color:#f92672">=</span> response[<span style="color:#e6db74">&#39;Items&#39;</span>]
+    <span style="color:#66d9ef">return</span> products
+</code></pre></div><hr>
+<h2 id="api_endpointspy">api_endpoints.py</h2>
+<p>Now that you have created the utility functions required to get the products from the database, you want to add a route and view function to your <code>api_endpoints.py</code> file.</p>
+<p>Don&rsquo;t forget to import the utility functions you just developed at the top of this file</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> chalicelib.util <span style="color:#f92672">import</span> get_products
+</code></pre></div><p>Here is the route and view function:</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#a6e22e">@api_endpoints.route</span>(<span style="color:#e6db74">&#39;/home&#39;</span>, methods<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;GET&#39;</span>], cors<span style="color:#f92672">=</span>cors_config)
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">home_endpoint</span>():
+    <span style="color:#e6db74">&#34;&#34;&#34;
+</span><span style="color:#e6db74">    Returns the products from the database
+</span><span style="color:#e6db74">    :return: products: the list of products on the application
+</span><span style="color:#e6db74">    &#34;&#34;&#34;</span>
+    <span style="color:#75715e"># Call DynamoDB</span>
+    products <span style="color:#f92672">=</span> get_products()
+    <span style="color:#66d9ef">return</span> products
+</code></pre></div><h3 id="understanding-the-parameters">Understanding the parameters</h3>
+<p>Notice that the routing information looks a bit different from what you have seen so far. First of all, the route is <code>/home</code> instead of <code>/</code>. Next, there is a parameter called <strong>methods</strong> and it has a value of <code>['GET']</code>. This list specifies what HTTP methods are accepted on this endpoint.</p>
+<p>The last parameter, <strong>cors</strong>, can be a boolean value (true, false) to dictate whether or not to allow Cross-Origin-Resource-Sharing. Alternatively, it can be a CORSConfig object from the Chalice library - this object type can specify a CORS configuration. This route uses a CORSConfig object called <code>cors_config</code>. Currently, this object does not exist, so initialize it at the top of your file.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">cors_config <span style="color:#f92672">=</span> CORSConfig(allow_origin<span style="color:#f92672">=</span>os<span style="color:#f92672">.</span>environ[<span style="color:#e6db74">&#39;S3_BUCKET&#39;</span>], allow_credentials<span style="color:#f92672">=</span>True, allow_headers<span style="color:#f92672">=</span>[<span style="color:#e6db74">&#39;Content-Type&#39;</span>, <span style="color:#e6db74">&#39;X-Amz-Date&#39;</span>,<span style="color:#e6db74">&#39;Authorization&#39;</span>, <span style="color:#e6db74">&#39;X-Api-Key&#39;</span>, <span style="color:#e6db74">&#39;x-requested-with&#39;</span>,<span style="color:#e6db74">&#39;Access-Control-Allow-Origin&#39;</span>, <span style="color:#e6db74">&#39;Access-Control-Allow-Credentials&#39;</span>])
+</code></pre></div><p>In this config, you will see that <strong>allow_origin</strong> is set to an environment variable called <code>S3_BUCKET</code>. Go to your <code>config.json</code> and make the necessary changes. For the <code>S3_bucket</code> variable, insert your S3 bucket&rsquo;s static hosting endpoint.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#f92672">&#34;version&#34;</span>: <span style="color:#e6db74">&#34;2.0&#34;</span>,
+  <span style="color:#f92672">&#34;app_name&#34;</span>: <span style="color:#e6db74">&#34;chalice-workshop&#34;</span>,
+  <span style="color:#f92672">&#34;stages&#34;</span>: {
+    <span style="color:#f92672">&#34;dev&#34;</span>: {
+      <span style="color:#f92672">&#34;api_gateway_stage&#34;</span>: <span style="color:#e6db74">&#34;api&#34;</span>,
+      <span style="color:#f92672">&#34;autogen_policy&#34;</span>: <span style="color:#66d9ef">false</span>,
+      <span style="color:#f92672">&#34;iam_policy_file&#34;</span>: <span style="color:#e6db74">&#34;policies/policy-dev.json&#34;</span>,
+      <span style="color:#f92672">&#34;environment_variables&#34;</span>: {
+          <span style="color:#f92672">&#34;S3_BUCKET&#34;</span>: <span style="color:#e6db74">&#34;[INSERT S3 BUCKET STATIC URL]&#34;</span>,
+          <span style="color:#f92672">&#34;APP_TABLE_NAME&#34;</span>: <span style="color:#e6db74">&#34;chalice-demo-table&#34;</span>
+      }
+    }
+  }
+}
+</code></pre></div><p>Ultimately, this CORS configuration will ensure that Cross-Origin-Resource-Sharing is only allowed with your statically hosted website on S3.</p>
+<h3 id="test-the-app">Test the App</h3>
+<p>You can use Chalice deploy to quickly test your app by requesting the resulting REST API from the deployment. Alternatively, you can push your code changes to your remote CodeCommit repository (created when generating a CI/CD pipeline). After the code has gone through your pipeline and your app has been deployed with CloudFormation, you can test it by accessing your static website and seeing if the Angular app loads your products. The add to cart functionality will not work yet, but this still indicates there is a connection between the front-end and backend REST API.</p>
+<p><img src="../images/test-home.png" alt="TestHome"></p>
+
+
+
+
+
+<footer class=" footline" >
+	
+</footer>
+
+        
+        </div> 
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+        
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+        
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="../chalice-dev.html" title="Chalice Development"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="../chalice-dev/trigger.html" title="Post Confirmation Cognito Trigger" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+    
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="../js/clipboard.min.js"></script>
+    <script src="../js/perfect-scrollbar.min.js"></script>
+    <script src="../js/perfect-scrollbar.jquery.min.js"></script>
+    <script src="../js/jquery.sticky.js"></script>
+    <script src="../js/featherlight.min.js"></script>
+    <script src="../js/html5shiv-printshiv.min.js"></script>
+    <script src="../js/highlight.pack.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="../js/modernizr.custom-3.6.0.js"></script>
+    <script src="../js/learn.js"></script>
+    <script src="../js/hugo-learn.js"></script>
+
+    <link href="../mermaid/mermaid.css" rel="stylesheet" />
+    <script src="../mermaid/mermaid.js"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true });
+    </script>
+    <div id = 'kinesisStreamName' title = ""/></div>
+<div id = 'cognitoPoolId' title = ""/></div>
+<div id = 'awsRegion' title = ""/></div>
+<div id = 'contentId' title = ""/></div>
+<div id = 'language' title = "en"/></div>
+<div id = 'versions' title = ""/></div>
+
+<script src="https://sdk.amazonaws.com/js/aws-sdk-2.283.1.min.js"></script>
+<script src="../js/kinesis.js"></script>
+  </body>
+</html>
