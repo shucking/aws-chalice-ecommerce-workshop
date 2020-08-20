@@ -1,5 +1,5 @@
 +++
-title = "Chalice For Serverless Applications"
+title = "Chalice E-Commerce Workshop"
 chapter = true
 weight = 1
 +++
