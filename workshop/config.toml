@@ -14,7 +14,7 @@ pygmentsCodeFences = true
 pygmentsStyle = "monokai"
 
 [params]
-  editURL = "https://github.com/madhavmehta1/aws-chalice-ecommerce-workshop/tree/master/workshop/content"
+  editURL = "https://github.com/madhavmehta1/aws-chalice-ecommerce-workshop/tree/master/workshop/content/"
   description = "Chalice For Serverless Applications"
   author = "Madhav Mehta"
   disableBreadcrumb = false
